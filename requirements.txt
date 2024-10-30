@@ -1,3 +1,9 @@
 polars
 pandas
 numpy
+requests
+beautifulsoup4
+scikit-learn
+sshtunnel
+pytz
+python-dotenv
