@@ -18,11 +18,11 @@ RUN python3 -m pip install --upgrade pip
 RUN python3 -m pip install --no-cache-dir -r requirements.txt
 RUN python3 -m pip install psycopg2-binary
 
-COPY scripts scripts
-RUN chmod +x scripts
+RUN mkdir /home/data
 
 # Create the AIRFLOW_HOME directory and change its ownership to the airflow user
 RUN chown -R airflow: ${AIRFLOW_HOME}
+RUN chown -R airflow: /home/data
 
 # Customize the airflow.cfg file
 RUN echo "[core]" > ${AIRFLOW_HOME}/airflow.cfg && \
@@ -31,3 +31,5 @@ RUN echo "[core]" > ${AIRFLOW_HOME}/airflow.cfg && \
 
 # Switch back to the airflow user
 USER airflow
+
+USER ${AIRFLOW_UID}
