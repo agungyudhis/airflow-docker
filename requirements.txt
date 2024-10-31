@@ -8,3 +8,4 @@ scikit-learn
 sshtunnel
 pytz
 python-dotenv
+fastexcel

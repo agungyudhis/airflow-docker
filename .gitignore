@@ -1,4 +1,9 @@
 .env
 logs/
+data/
+dags/
+config/
+plugins/
 test_python/
+postgres-data/
 __pycache__/
